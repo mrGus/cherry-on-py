@@ -29,7 +29,8 @@ def launch_object_tracking(video_uri: str, annot_bucket: str):
     - annot_uri: gs://annot_bucket/video_bucket/path/to/video.ext.json
     """
     print(f'Launching object tracking for <{video_uri}>...')
-    features = [videointelligence.enums.Feature.OBJECT_TRACKING]
+    #features = [videointelligence.enums.Feature.OBJECT_TRACKING]
+    features = [videointelligence.enums.Feature.LOGO_RECOGNITION]
     video_blob = storage.Blob.from_string(video_uri)
     video_bucket = video_blob.bucket.name
     path_to_video = video_blob.name
